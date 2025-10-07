@@ -1,6 +1,6 @@
 # Jayesh Koli - Full Stack Developer Portfolio
 
-![Jayesh Koli Portfolio Thumbnail](Img/Lord-r.png)
+![Jayesh Koli Portfolio Thumbnail](Img/portfolio.png)
 
 A modern, responsive personal portfolio website showcasing my skills, projects, and experience as a full-stack developer. Built with clean HTML, CSS, and JavaScript, featuring smooth animations and a dark/light theme toggle.
 
