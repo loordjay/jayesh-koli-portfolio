@@ -374,7 +374,7 @@ window.addEventListener('load', () => {
       loader.style.display = 'none';
     }, 600); // Matches the CSS transition duration (0.6s)
 
-  }, 3000); // 3000ms = 3 seconds delay for demo purposes
+  }, 2000); // 3000ms = 3 seconds delay for demo purposes
 });
 
 
