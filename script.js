@@ -352,32 +352,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// Loader on window load
-window.addEventListener('load', () => {
-  // Simulating a network request or heavy processing with setTimeout
-  // In a real app, this would be an `await fetch()` or document ready check
-  setTimeout(() => {
-    const loader = document.getElementById('loader-wrapper');
-    const content = document.getElementById('main-content');
-
-    // Add class to hide loader (triggers CSS opacity transition)
-    loader.classList.add('loaded');
-
-    // Add class to show content (triggers CSS transform/opacity transition)
-    content.classList.add('visible');
-
-    // Enable scrolling on the body again
-    document.body.style.overflow = 'auto';
-
-    // Optional: Remove loader from DOM entirely after transition to clean up
-    setTimeout(() => {
-      loader.style.display = 'none';
-    }, 600); // Matches the CSS transition duration (0.6s)
-
-  }, 2000); // 3000ms = 3 seconds delay for demo purposes
-});
-
-
 // website contact form submission 
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
