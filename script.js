@@ -212,10 +212,10 @@ function initializeProjectsGrid() {
 }
 
 // Placeholder functions
-function initializeAnimations() {}
-function initializeProjectFilters() {}
-function initializeScrollEffects() {}
-function initializeContactForm() {}
+function initializeAnimations() { }
+function initializeProjectFilters() { }
+function initializeScrollEffects() { }
+function initializeContactForm() { }
 
 // ==========================================
 // EVENT LISTENERS
@@ -241,21 +241,21 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeContactForm();
 
   // Navigation hamburger menu
-  hamburger.addEventListener('click', function() {
+  hamburger.addEventListener('click', function () {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
   });
 
   // Close mobile menu when clicking on a link
   document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function () {
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
     });
   });
 
   // Navbar scroll effect
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     if (window.scrollY > 100) {
       navbar.classList.add('scrolled');
       backToTop.classList.add('visible');
@@ -268,16 +268,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Back to top button
-  backToTop.addEventListener('click', function() {
+  backToTop.addEventListener('click', function () {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
-    
+
   });
 
   // Theme toggle
-  themeToggle.addEventListener('click', function() {
+  themeToggle.addEventListener('click', function () {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+  anchor.addEventListener('click', function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
@@ -354,7 +354,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // website contact form submission 
 
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
+document.getElementById('contact-form').addEventListener('submit', function (event) {
   event.preventDefault();
 
   const form = this;
@@ -365,24 +365,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     method: form.method,
     body: formData,
   })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      alertBox.className = 'form-alert success';
-      alertBox.textContent = 'Message sent successfully!';
-      alertBox.style.display = 'block';
-      form.reset();
-    } else {
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alertBox.className = 'form-alert success';
+        alertBox.textContent = 'Message sent successfully!';
+        alertBox.style.display = 'block';
+        form.reset();
+      } else {
+        alertBox.className = 'form-alert error';
+        alertBox.textContent = 'There was an error sending your message. Please try again.';
+        alertBox.style.display = 'block';
+      }
+    })
+    .catch(error => {
       alertBox.className = 'form-alert error';
       alertBox.textContent = 'There was an error sending your message. Please try again.';
       alertBox.style.display = 'block';
-    }
-  })
-  .catch(error => {
-    alertBox.className = 'form-alert error';
-    alertBox.textContent = 'There was an error sending your message. Please try again.';
-    alertBox.style.display = 'block';
-  });
+    });
 });
 
 
